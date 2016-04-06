@@ -177,13 +177,16 @@ alpha:(a)/255.0f])
 
 -(void)registerkeyBoardNotification
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 -(void)keyboardDidShow : (NSNotification *)noti
 {
     CGSize size = [noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    
+    
+    
     
     CGRect frame = inputTool.frame;
     frame.origin.y = (self.view.frame.size.height - size.height - frame.size.height);

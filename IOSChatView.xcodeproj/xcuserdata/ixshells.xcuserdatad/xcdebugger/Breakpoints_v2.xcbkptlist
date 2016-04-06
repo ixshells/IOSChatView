@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IOSChatView/ViewController.m"
-            timestampString = "481627620.001176"
+            timestampString = "481631056.055318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "-keyboardWillHide:"
             landmarkType = "5">
          </BreakpointContent>
