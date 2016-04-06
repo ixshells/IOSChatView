@@ -94,6 +94,8 @@ alpha:(a)/255.0f])
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     NSArray* _resultArray;
+    ChatTextTool* inputTool;
+    CGFloat _toolHeight;
 }
 
 @property(nonatomic, strong)UITableView* tableView;
@@ -155,7 +157,10 @@ alpha:(a)/255.0f])
     
     [self scrollTableViewToBottom:NO];
     
-    ChatTextTool* inputTool = [[ChatTextTool alloc] init];
+    [self registerkeyBoardNotification];
+    
+    _toolHeight = 0.0f;
+    inputTool = [[ChatTextTool alloc] init];
     [self.view addSubview:inputTool];
     inputTool.translatesAutoresizingMaskIntoConstraints = NO;
     [inputTool bottomToSuperView];
@@ -163,8 +168,41 @@ alpha:(a)/255.0f])
     [inputTool trailingToSuperView];
     [inputTool heightEqualTo:60];
     inputTool.backgroundColor = RGB(112, 206, 250);
+    
+    UITapGestureRecognizer* recognizer;
+    recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture)];
+    [self.view addGestureRecognizer:recognizer];
 
 }
+
+-(void)handleTapGesture
+{
+    [self.view endEditing:YES];
+}
+
+-(void)registerkeyBoardNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)keyboardDidShow : (NSNotification *)noti
+{
+    CGSize size = [noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    
+    CGRect frame = inputTool.frame;
+    frame.origin.y = (self.view.frame.size.height - size.height - frame.size.height);
+    inputTool.frame = frame;
+    
+}
+
+-(void)keyboardWillHide : (NSNotification *)noti
+{
+    CGRect frame = inputTool.frame;
+    frame.origin.y = (self.view.frame.size.height - frame.size.height);
+    inputTool.frame = frame;
+}
+
 
 
 - (void)scrollTableViewToBottom:(BOOL)animated {
