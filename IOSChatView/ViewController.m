@@ -160,13 +160,8 @@ alpha:(a)/255.0f])
     [self registerkeyBoardNotification];
     
     _toolHeight = 0.0f;
-    inputTool = [[ChatTextTool alloc] init];
+    inputTool = [[ChatTextTool alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 60, self.view.frame.size.width, 60)];
     [self.view addSubview:inputTool];
-    inputTool.translatesAutoresizingMaskIntoConstraints = NO;
-    [inputTool bottomToSuperView];
-    [inputTool leadingToSuperView];
-    [inputTool trailingToSuperView];
-    [inputTool heightEqualTo:60];
     inputTool.backgroundColor = RGB(112, 206, 250);
     
     UITapGestureRecognizer* recognizer;
