@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		256DE8EA1CB39DB900FB2B9A /* ChatInputTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 256DE8E91CB39DB900FB2B9A /* ChatInputTool.m */; };
+		256DE8EE1CB4C79D00FB2B9A /* chat_function@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 256DE8EC1CB4C79D00FB2B9A /* chat_function@2x.png */; };
+		256DE8EF1CB4C79D00FB2B9A /* chat_function@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 256DE8ED1CB4C79D00FB2B9A /* chat_function@3x.png */; };
+		256DE8F21CB4FF9D00FB2B9A /* chat_voice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 256DE8F01CB4FF9D00FB2B9A /* chat_voice@2x.png */; };
+		256DE8F31CB4FF9D00FB2B9A /* chat_voice@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 256DE8F11CB4FF9D00FB2B9A /* chat_voice@3x.png */; };
 		25EEF8511CA520A4003B7DA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8501CA520A4003B7DA8 /* main.m */; };
 		25EEF8541CA520A4003B7DA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8531CA520A4003B7DA8 /* AppDelegate.m */; };
 		25EEF8571CA520A4003B7DA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8561CA520A4003B7DA8 /* ViewController.m */; };
@@ -15,6 +20,10 @@
 		25EEF8751CA520A4003B7DA8 /* IOSChatViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8741CA520A4003B7DA8 /* IOSChatViewUITests.m */; };
 		25EEF8961CABCCB8003B7DA8 /* NSObject+NSLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8931CABCCB8003B7DA8 /* NSObject+NSLayoutConstraint.m */; };
 		25EEF8971CABCCB8003B7DA8 /* UIView+NSLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8951CABCCB8003B7DA8 /* UIView+NSLayoutConstraint.m */; };
+		25EEF8EF1CACF1C8003B7DA8 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8E81CACF1C8003B7DA8 /* UITableView+FDIndexPathHeightCache.m */; };
+		25EEF8F01CACF1C8003B7DA8 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8EA1CACF1C8003B7DA8 /* UITableView+FDKeyedHeightCache.m */; };
+		25EEF8F11CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8EC1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCell.m */; };
+		25EEF8F21CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEF8EE1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCellDebug.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		256DE8E81CB39D8000FB2B9A /* ChatInputTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatInputTool.h; sourceTree = "<group>"; };
+		256DE8E91CB39DB900FB2B9A /* ChatInputTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatInputTool.m; sourceTree = "<group>"; };
+		256DE8EC1CB4C79D00FB2B9A /* chat_function@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chat_function@2x.png"; path = "Resouce/chat_function@2x.png"; sourceTree = "<group>"; };
+		256DE8ED1CB4C79D00FB2B9A /* chat_function@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chat_function@3x.png"; path = "Resouce/chat_function@3x.png"; sourceTree = "<group>"; };
+		256DE8F01CB4FF9D00FB2B9A /* chat_voice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chat_voice@2x.png"; path = "Resouce/chat_voice@2x.png"; sourceTree = "<group>"; };
+		256DE8F11CB4FF9D00FB2B9A /* chat_voice@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chat_voice@3x.png"; path = "Resouce/chat_voice@3x.png"; sourceTree = "<group>"; };
 		25EEF84C1CA520A4003B7DA8 /* IOSChatView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSChatView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25EEF8501CA520A4003B7DA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		25EEF8521CA520A4003B7DA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,6 +68,14 @@
 		25EEF8931CABCCB8003B7DA8 /* NSObject+NSLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSLayoutConstraint.m"; sourceTree = "<group>"; };
 		25EEF8941CABCCB8003B7DA8 /* UIView+NSLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NSLayoutConstraint.h"; sourceTree = "<group>"; };
 		25EEF8951CABCCB8003B7DA8 /* UIView+NSLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NSLayoutConstraint.m"; sourceTree = "<group>"; };
+		25EEF8E71CACF1C8003B7DA8 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
+		25EEF8E81CACF1C8003B7DA8 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
+		25EEF8E91CACF1C8003B7DA8 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
+		25EEF8EA1CACF1C8003B7DA8 /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
+		25EEF8EB1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
+		25EEF8EC1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
+		25EEF8ED1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
+		25EEF8EE1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +103,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		256DE8E71CB39D5900FB2B9A /* ChatTool */ = {
+			isa = PBXGroup;
+			children = (
+				256DE8E81CB39D8000FB2B9A /* ChatInputTool.h */,
+				256DE8E91CB39DB900FB2B9A /* ChatInputTool.m */,
+			);
+			name = ChatTool;
+			sourceTree = "<group>";
+		};
+		256DE8EB1CB4C79500FB2B9A /* Resouce */ = {
+			isa = PBXGroup;
+			children = (
+				256DE8F01CB4FF9D00FB2B9A /* chat_voice@2x.png */,
+				256DE8F11CB4FF9D00FB2B9A /* chat_voice@3x.png */,
+				256DE8EC1CB4C79D00FB2B9A /* chat_function@2x.png */,
+				256DE8ED1CB4C79D00FB2B9A /* chat_function@3x.png */,
+			);
+			name = Resouce;
+			sourceTree = "<group>";
+		};
 		25EEF8431CA520A4003B7DA8 = {
 			isa = PBXGroup;
 			children = (
+				256DE8EB1CB4C79500FB2B9A /* Resouce */,
 				25EEF84E1CA520A4003B7DA8 /* IOSChatView */,
 				25EEF8681CA520A4003B7DA8 /* IOSChatViewTests */,
 				25EEF8731CA520A4003B7DA8 /* IOSChatViewUITests */,
@@ -103,6 +147,8 @@
 		25EEF84E1CA520A4003B7DA8 /* IOSChatView */ = {
 			isa = PBXGroup;
 			children = (
+				256DE8E71CB39D5900FB2B9A /* ChatTool */,
+				25EEF8E61CACF1C8003B7DA8 /* Classes */,
 				25EEF8911CABCC44003B7DA8 /* layout */,
 				25EEF8521CA520A4003B7DA8 /* AppDelegate.h */,
 				25EEF8531CA520A4003B7DA8 /* AppDelegate.m */,
@@ -150,6 +196,21 @@
 				25EEF8951CABCCB8003B7DA8 /* UIView+NSLayoutConstraint.m */,
 			);
 			name = layout;
+			sourceTree = "<group>";
+		};
+		25EEF8E61CACF1C8003B7DA8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				25EEF8E71CACF1C8003B7DA8 /* UITableView+FDIndexPathHeightCache.h */,
+				25EEF8E81CACF1C8003B7DA8 /* UITableView+FDIndexPathHeightCache.m */,
+				25EEF8E91CACF1C8003B7DA8 /* UITableView+FDKeyedHeightCache.h */,
+				25EEF8EA1CACF1C8003B7DA8 /* UITableView+FDKeyedHeightCache.m */,
+				25EEF8EB1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCell.h */,
+				25EEF8EC1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCell.m */,
+				25EEF8ED1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCellDebug.h */,
+				25EEF8EE1CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCellDebug.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +317,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256DE8EE1CB4C79D00FB2B9A /* chat_function@2x.png in Resources */,
+				256DE8F31CB4FF9D00FB2B9A /* chat_voice@3x.png in Resources */,
 				25EEF85C1CA520A4003B7DA8 /* Assets.xcassets in Resources */,
+				256DE8EF1CB4C79D00FB2B9A /* chat_function@3x.png in Resources */,
+				256DE8F21CB4FF9D00FB2B9A /* chat_voice@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +347,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				25EEF8571CA520A4003B7DA8 /* ViewController.m in Sources */,
+				25EEF8F11CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				256DE8EA1CB39DB900FB2B9A /* ChatInputTool.m in Sources */,
+				25EEF8F21CACF1C8003B7DA8 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				25EEF8971CABCCB8003B7DA8 /* UIView+NSLayoutConstraint.m in Sources */,
 				25EEF8541CA520A4003B7DA8 /* AppDelegate.m in Sources */,
+				25EEF8EF1CACF1C8003B7DA8 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				25EEF8961CABCCB8003B7DA8 /* NSObject+NSLayoutConstraint.m in Sources */,
+				25EEF8F01CACF1C8003B7DA8 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				25EEF8511CA520A4003B7DA8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

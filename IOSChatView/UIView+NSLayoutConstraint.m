@@ -10,6 +10,9 @@
 #import "NSObject+NSLayoutConstraint.h"
 
 @implementation UIView (zxgNSLayoutConstraint)
+
+#pragma mark leading
+
 -(NSLayoutConstraint*)leadingToSuperView {
   return [self leadingToSuperView:0];
 }
@@ -74,6 +77,33 @@
   }
   return con;
 }
+
+-(NSLayoutConstraint*)leadingToTrailing:(id)second
+{
+    NSLayoutConstraint* con =  [super leadingToTrailing:second];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        [self.superview addConstraint:con];
+    } else {
+        con.active = YES;
+    }
+    return con;
+}
+
+-(NSLayoutConstraint*)leadingToTrailing:(id)second add:(CGFloat)constant
+{
+    NSLayoutConstraint* con =  [super leadingToTrailing:second add:constant];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        [self.superview addConstraint:con];
+    } else {
+        con.active = YES;
+    }
+    return con;
+}
+
+
+#pragma mark trailing
 
 -(NSLayoutConstraint*)trailingToSuperView {
   return [self trailingToSuperView:0];
@@ -140,6 +170,42 @@
   return con;
 }
 
+
+-(NSLayoutConstraint*)trailingToLeading:(id)second
+{
+    NSLayoutConstraint* con = [super trailingToLeading:second];
+    
+    if([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
+    {
+        [self.superview addConstraint:con];
+    }
+    else
+    {
+        con.active = YES;
+    }
+    
+    return con;
+}
+
+
+-(NSLayoutConstraint*)trailingToLeading:(id)second minus:(CGFloat)constant
+{
+    NSLayoutConstraint* con = [super trailingToLeading:second minus:constant];
+    
+    if([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
+    {
+        [self.superview addConstraint:con];
+    }
+    else
+    {
+        con.active = YES;
+    }
+    
+    return con;
+}
+
+#pragma mark top
+
 -(NSLayoutConstraint*)topToSuperView {
   return [self topToSuperView:0];
 }
@@ -205,6 +271,33 @@
   return con;
 }
 
+-(NSLayoutConstraint*)topToBottom:(id)second
+{
+    NSLayoutConstraint* con = [super topToBottom:second];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        [self.superview addConstraint:con];
+    } else {
+        con.active = YES;
+    }
+    return con;
+}
+
+-(NSLayoutConstraint*)topToBottom:(id)second add:(CGFloat)constant
+{
+    NSLayoutConstraint* con = [super topToBottom:second add:constant];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        [self.superview addConstraint:con];
+    } else {
+        con.active = YES;
+    }
+    return con;
+}
+
+
+#pragma mark bottom
+
 -(NSLayoutConstraint*)bottomToSuperView {
   return [self bottomToSuperView:0];
 }
@@ -269,6 +362,33 @@
   }
   return con;
 }
+
+-(NSLayoutConstraint*)bottomToTop:(id)second
+{
+    NSLayoutConstraint* con = [super bottomToTop:second];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        [self.superview addConstraint:con];
+    } else {
+        con.active = YES;
+    }
+    return con;
+}
+
+-(NSLayoutConstraint*)bottomToTop:(id)second add:(CGFloat)constant
+{
+    NSLayoutConstraint* con = [super bottomToTop:second minus:constant];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        [self.superview addConstraint:con];
+    } else {
+        con.active = YES;
+    }
+    return con;
+}
+
+
+#pragma mark center
 
 -(NSLayoutConstraint*)centerXToSuperView {
   NSLayoutConstraint* con = [super centerXEqualTo:self.superview];
