@@ -11,13 +11,7 @@
 #import "UIView+NSLayoutConstraint.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "ChatInputTool.h"
-
-#define RGB_A(r, g, b, a) ([UIColor colorWithRed:(r)/255.0f \
-green:(g)/255.0f \
-blue:(b)/255.0f \
-alpha:(a)/255.0f])
-
-#define RGB(r, g, b) RGB_A(r, g, b, 255)
+#import "MessageNode.h"
 
 
 @interface TestCell : UITableViewCell
@@ -84,7 +78,7 @@ alpha:(a)/255.0f])
 {
     self = [super init];
     
-    [self label];
+//    [self label];
     
     return self;
 }
@@ -96,6 +90,7 @@ alpha:(a)/255.0f])
     NSArray* _resultArray;
     ChatTextTool* inputTool;
     CGFloat _toolHeight;
+    CGRect _tableViewFrame;
 }
 
 @property(nonatomic, strong)UITableView* tableView;
@@ -147,13 +142,15 @@ alpha:(a)/255.0f])
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     CGRect fr = self.tableView.frame;
+    fr.size.height-= 60;
     self.tableView.frame = fr;
     self.tableView.backgroundColor = [self backColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.estimatedRowHeight = 100;
     [self.tableView registerClass:[TestCell class] forCellReuseIdentifier:@"cell"];
-    
+    _tableViewFrame = fr;
     
     [self scrollTableViewToBottom:NO];
     
@@ -185,13 +182,15 @@ alpha:(a)/255.0f])
 {
     CGSize size = [noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     
-    
-    
-    
     CGRect frame = inputTool.frame;
     frame.origin.y = (self.view.frame.size.height - size.height - frame.size.height);
     inputTool.frame = frame;
     
+    CGRect f = _tableViewFrame;
+    f.size.height -= size.height;
+    
+    self.tableView.frame = f;
+    [self scrollTableViewToBottom:YES];
 }
 
 -(void)keyboardWillHide : (NSNotification *)noti
@@ -199,7 +198,11 @@ alpha:(a)/255.0f])
     CGRect frame = inputTool.frame;
     frame.origin.y = (self.view.frame.size.height - frame.size.height);
     inputTool.frame = frame;
+    
+    self.tableView.frame = _tableViewFrame;
+        [self scrollTableViewToBottom:YES];
 }
+
 
 
 
@@ -242,9 +245,14 @@ alpha:(a)/255.0f])
    
     
     [cell clearContent];
-    [cell addlabel];
     
-    [cell setLabelText:@"right你好，恭喜你已被我方录用！联系人：鲁先生 联系电话：189 3888 6293 工作时间：2015年12月8日(周日) 09:00 工作地址：成都市青羊区红河路富鸿大厦2楼 备注：请带好身份证和健康证。"];
+    TextNode* node = [[TextNode alloc] init];
+    node.text = @"测试测试了";
+    [node drawToView:cell.contentView];
+    
+//    [cell addlabel];
+    
+//    [cell setLabelText:@"right你好，恭喜你已被我方录用！联系人：鲁先生 联系电话：189 3888 6293 工作时间：2015年12月8日(周日) 09:00 工作地址：成都市青羊区红河路富鸿大厦2楼 备注：请带好身份证和健康证。"];
 }
 
 
@@ -254,9 +262,9 @@ alpha:(a)/255.0f])
         [self configureCell:cell atIndexPath:indexPath];
     }];
     
-    return UITableViewAutomaticDimension;
+//    return UITableViewAutomaticDimension;
     
-    return 200;
+//    return 200;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

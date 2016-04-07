@@ -18,7 +18,7 @@
 #define TextToolBarMaxHeight 230/2.0
 #define AllMarginHeight 14 //先写死一个数据，后面改为自动适应
 
-@interface ChatInputTool()
+@interface ChatInputTool()<UITextViewDelegate>
 {}
 
 @end
@@ -127,6 +127,23 @@
     [super initView];
     
     [self inputTextView];
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range
+replacementText:(NSString *)text {
+    
+    if ( (textView.returnKeyType == UIReturnKeySend || textView.returnKeyType == UIReturnKeyDone ) && [ text isEqualToString: @"\n" ] ) {
+        if (textView.text.length > 0) {
+            
+//            if ([self.delegate respondsToSelector:@selector(sendMessage:)]) {
+//                [self.delegate sendMessage:textView.text];
+//            }
+            //            [self clearTextView];
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 @end

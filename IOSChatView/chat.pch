@@ -1,0 +1,29 @@
+//
+//  chat.pch
+//  IOSChatView
+//
+//  Created by ixshells on 16/4/6.
+//  Copyright © 2016年 ixshells. All rights reserved.
+//
+
+#ifndef chat_pch
+#define chat_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define RGB_A(r, g, b, a) ([UIColor colorWithRed:(r)/255.0f \
+green:(g)/255.0f \
+blue:(b)/255.0f \
+alpha:(a)/255.0f])
+
+#define RGB(r, g, b) RGB_A(r, g, b, 255)
+
+
+#define colorWithHex(hex)(\
+     [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 \
+                           green:((float)((hex & 0xFF00) >> 8))/255.0 \
+                            blue:((float)(hex & 0xFF))/255.0 alpha:1.0f])
+
+
+#endif /* chat_pch */
